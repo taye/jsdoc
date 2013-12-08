@@ -130,6 +130,7 @@ global.dump = function() {
         process.exit(errorCode || 0);
     }
 
+    var logger = require('jsdoc/util/logger');
     var path = require('jsdoc/path');
     var runtime = require('jsdoc/util/runtime');
 
@@ -145,7 +146,7 @@ global.dump = function() {
         }
         catch(e) {
             if (e.rhinoException) {
-                e.rhinoException.printStackTrace();
+                logger.error( e.rhinoException.printStackTrace() );
                 process.exit(1);
             } else {
                 console.trace(e);
