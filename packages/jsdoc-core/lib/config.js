@@ -72,6 +72,7 @@ const defaults = exports.defaults = {
      * settings.
      */
     templates: {
+        baseUrl: '',
         /**
          * Set to `true` to use a monospaced font for links to other code symbols, but not links to
          * websites.

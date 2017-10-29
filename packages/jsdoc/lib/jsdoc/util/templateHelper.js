@@ -334,7 +334,7 @@ function buildLink(longname, linkText, options) {
         return text;
     }
     else {
-        return `<a href="${encodeURI(fileUrl + fragmentString)}"${classString}>${text}</a>`;
+        return `<a href="${encodeURI(env.conf.templates.baseUrl + fileUrl + fragmentString)}"${classString}>${text}</a>`;
     }
 }
 
