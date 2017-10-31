@@ -365,7 +365,12 @@ module.exports = (() => {
             template = require(`${env.opts.template}/publish`);
         }
         catch (e) {
-            log.fatal(`Unable to load template: ${e.message}` || e);
+            try {
+                template = require(env.opts.template);
+            }
+            catch (ee) {
+                log.fatal(`Unable to load template: ${e.message}` || ee);
+            }
         }
 
         // templates should include a publish.js file that exports a "publish" function
